@@ -85,6 +85,14 @@ def place_card_on_background(card_img, name):
     background_name = random.choice(all_background)
     background_path = os.path.join(BACKGROUND_DIR, background_name)
     background = Image.open(background_path).convert("RGBA")
+    min_size = 640
+    w, h = background.size
+    scale = max(min_size / w, min_size / h)
+    new_w = int(w * scale)
+    new_h = int(h * scale)
+    background = background.resize((new_w, new_h), resample=Image.Resampling.LANCZOS)
+    random_crop = torchvision.transforms.RandomCrop(640)
+    background = random_crop(background)
     card = card_img.convert("RGBA")
     # ----------------------------- #
     new_width = int(background.width * random.uniform(0.2, 0.7))
@@ -97,7 +105,7 @@ def place_card_on_background(card_img, name):
         card_resized, random.uniform(-180, 180), expand=True
     )
     output_card = torchvision.transforms.RandomPerspective(
-        distortion_scale=0.5, p=1.0
+        distortion_scale=0.5, p=0.5
     )(card_rotated)
     # ----------------------------- #
     xmax = background.width - output_card.width
@@ -135,7 +143,7 @@ def place_card_on_background(card_img, name):
     output = jitter(output)
     # ----------------------------- #
     tensor_image = ToTensor()(output).unsqueeze(0) 
-    noise = torch.randn_like(tensor_image) * 0.0 + 0.1
+    noise = torch.randn_like(tensor_image) * random.uniform(0, 0.1)
     tensor_img = tensor_image + noise
     tensor_img = torch.clamp(tensor_img, 0.0, 1.0)
     output = ToPILImage()(tensor_img.squeeze(0))
