@@ -11,13 +11,13 @@ Szedje le a projektet
   git clone https://github.com/yeti444/YOLO-2025-05
 ```
 
-Hozzon létre egy virtuális környezetet a projekt mappájában
+Hozzon létre egy virtuális környezetet a projekt mappájában.
 
 ```bash
   python -m venv .venv
 ```
 
-Aktiválja a virtuális környezetet
+Aktiválja a virtuális környezetet.
 
 ```bash
   .\.venv\Scripts\Activate.ps1
@@ -27,17 +27,17 @@ Telepítse a függőségeket
 
 Pytorch: https://pytorch.org/get-started/locally/
 
-Windows alapú nvidia GPU-val rendelkező rendszer esetén
+Windows alapú nvidia GPU-val rendelkező rendszer esetén.
 ```bash
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
 
-Aztán telepítse a(z) ultralytics csomagot
+Aztán telepítse a(z) ultralytics csomagot.
 ```bash
   pip install ultralytics
 ```
 
-Csomagolja a dasatets.7z fájlt a projekt mellé
+Csomagolja a dasatets.7z fájlt a projekt mellé.
 
 ## train.py parancssori argumentumok
 
