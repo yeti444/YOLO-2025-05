@@ -11,9 +11,9 @@ from torchvision.transforms import ToPILImage, ToTensor
 
 FACES_DIR = "../datasets/faces"
 BACKGROUND_DIR = "../datasets/backgrounds"
-TEMPLATE = "./cardData/card_template.png"
+TEMPLATE = "./cardData/test_template.png"
 OUTPUT = "../datasets/student_card"
-CLASS_ID = 0
+CLASS_ID = 1
 
 
 def create_one_card():

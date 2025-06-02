@@ -1,6 +1,6 @@
 # YOLO-2025-05
 
-Sze kártyaészlelő YOLO modell tanító és észlelő script és dummy kártya generáló script megvalósítása Python nyelvben
+SZE kártyaészlelő YOLO modell tanító és észlelő script és dummy kártya generáló script megvalósítása Python nyelvben
 
 
 ## Futtatása
@@ -41,7 +41,7 @@ Csomagolja a dasatets.7z fájlt a projekt mellé.
 
 ## train.py parancssori argumentumok
 
-Ez a szkript egy YOLOv8 modellt tanít az Ultralytics könyvtár segítségével. Az alábbi argumentumokat lehet megadni futtatáskor:
+Ez a script egy YOLOv8 modellt tanít az Ultralytics könyvtár segítségével. Az alábbi argumentumokat lehet megadni futtatáskor:
 
 ### Használat
 
@@ -69,7 +69,7 @@ Ez a parancs elindít egy tanítást a `cardData.yaml` alapján, 100 epochon ker
 
 ## detect.py parancssori argumentumok
 
-Ez a szkript képes képek vagy videók detektálására egy betöltött YOLO modell segítségével. Az alábbi argumentumokat lehet megadni:
+Ez a script képes képek vagy videók detektálására egy betöltött YOLO modell segítségével. Az alábbi argumentumokat lehet megadni:
 
 ### Használat
 
